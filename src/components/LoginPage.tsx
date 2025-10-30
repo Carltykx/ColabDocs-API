@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAuth } from '../contexts/AuthContext';
-import { Google } from './icons';
+import { Google } from '../../components/icons';
 
 export const LoginPage: React.FC = () => {
   const { loginWithGoogle } = useAuth();

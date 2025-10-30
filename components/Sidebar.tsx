@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Workspace, UserProfile } from '../types';
 import { Home, FileText, Code, BarChart2, Settings as SettingsIcon, PlusCircle, LogOut } from './icons';
-import { useAuth } from '../contexts/AuthContext';
+import { useAuth } from '../src/contexts/AuthContext';
 
 
 interface SidebarProps {

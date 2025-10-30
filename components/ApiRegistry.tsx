@@ -1,8 +1,7 @@
-
 import React, { useState } from 'react';
 import { ApiRegistration } from '../types';
 import { Code, PlusCircle, Eye, EyeOff } from './icons';
-import { createApi } from '../services/firestoreService';
+import { createApi } from '../src/services/firestoreService';
 
 interface ApiRegistryProps {
   apis: ApiRegistration[];

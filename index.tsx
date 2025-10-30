@@ -1,9 +1,9 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import { AuthProvider } from './contexts/AuthContext';
-import './styles/globals.css';
+import { AuthProvider } from './src/contexts/AuthContext';
+import './src/styles/globals.css';
+import 'firebase/auth';
 
 // Service Worker Registration
 if ('serviceWorker' in navigator) {

@@ -1,8 +1,8 @@
 import React from 'react';
-import { useAuth } from './contexts/AuthContext';
-import { LoginPage } from './components/LoginPage';
-import { AuthenticatedApp } from './components/AuthenticatedApp';
-import { Spinner } from './components/Spinner';
+import { useAuth } from './src/contexts/AuthContext';
+import { LoginPage } from './src/components/LoginPage';
+import { AuthenticatedApp } from './src/components/AuthenticatedApp';
+import { Spinner } from './src/components/Spinner';
 
 export default function App() {
   const { user, loading } = useAuth();

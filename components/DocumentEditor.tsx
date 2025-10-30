@@ -1,10 +1,9 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { Document, UserProfile } from '../types';
 import { improveDocumentWithAI } from '../services/geminiService';
 import { Sparkles } from './icons';
-import { updateDocument } from '../services/firestoreService';
-import { useDebounce } from '../hooks/useDebounce';
+import { updateDocument } from '../src/services/firestoreService';
+import { useDebounce } from '../src/hooks/useDebounce';
 
 interface DocumentEditorProps {
   document: Document | null;

@@ -10,7 +10,7 @@ import {
   Timestamp,
   serverTimestamp,
 } from 'firebase/firestore';
-import { Workspace, Document, ApiRegistration, UserProfile } from '../types';
+import { Workspace, Document, ApiRegistration, UserProfile } from '../../types';
 
 export const subscribeToWorkspaces = (userId: string, callback: (workspaces: Workspace[]) => void) => {
   const q = query(collection(db, 'workspaces'), where('members', 'array-contains', userId));

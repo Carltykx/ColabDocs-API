@@ -1,11 +1,11 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { View, UserProfile, Workspace, Document, ApiRegistration, ApiUsageData, Theme } from '../types';
-import { Sidebar } from './Sidebar';
-import { Dashboard } from './Dashboard';
-import { DocumentEditor } from './DocumentEditor';
-import { ApiRegistry } from './ApiRegistry';
-import { ApiAnalytics } from './ApiAnalytics';
-import { Settings } from './Settings';
+import { View, UserProfile, Workspace, Document, ApiRegistration, ApiUsageData, Theme } from '../../types';
+import { Sidebar } from '../../components/Sidebar';
+import { Dashboard } from '../../components/Dashboard';
+import { DocumentEditor } from '../../components/DocumentEditor';
+import { ApiRegistry } from '../../components/ApiRegistry';
+import { ApiAnalytics } from '../../components/ApiAnalytics';
+import { Settings } from '../../components/Settings';
 import { useAuth } from '../contexts/AuthContext';
 import { subscribeToWorkspaces, subscribeToDocuments, subscribeToApis, getWorkspaceMembers } from '../services/firestoreService';
 import { Spinner } from './Spinner';
@@ -67,7 +67,7 @@ export const AuthenticatedApp: React.FC = () => {
         unsubApis();
       };
     }
-  }, [activeWorkspaceId]);
+  }, [activeWorkspaceId, workspaces]);
 
   const mockUsageData = useMemo(() => generateMockUsageData(), []);
 
