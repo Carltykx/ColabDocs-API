@@ -5,8 +5,17 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CollabDocs API Platform</title>
+
+    <!-- PWA Manifest & Theme -->
     <link rel="manifest" href="/manifest.json" />
     <meta name="theme-color" content="#6366f1" />
+
+    <!-- Apple PWA Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="CollabDocs" />
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+
   <script type="importmap">
 {
   "imports": {
@@ -19,7 +28,10 @@
     "firebase/app": "https://aistudiocdn.com/firebase@^10.12.3/app",
     "firebase/auth": "https://aistudiocdn.com/firebase@^10.12.3/auth",
     "firebase/firestore": "https://aistudiocdn.com/firebase@^10.12.3/firestore",
-    "date-fns": "https://aistudiocdn.com/date-fns@^4.1.0"
+    "date-fns": "https://aistudiocdn.com/date-fns@^4.1.0",
+    "vite": "https://aistudiocdn.com/vite@^7.1.12",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.0",
+    "vite-plugin-pwa": "https://aistudiocdn.com/vite-plugin-pwa@^1.1.0"
   }
 }
 </script>

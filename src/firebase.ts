@@ -1,6 +1,9 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, enableIndexedDbPersistence } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
+import { getFunctions } from "firebase/functions";
+
 
 // IMPORTANT: These variables should be configured in your environment.
 // For a Vite project, you would create a .env.local file with:
@@ -11,7 +14,6 @@ import { getFirestore } from "firebase/firestore";
 // VITE_FIREBASE_MESSAGING_SENDER_ID="your-sender-id"
 // VITE_FIREBASE_APP_ID="your-app-id"
 
-// Fix: Cast import.meta to `any` to resolve TypeScript errors for Vite environment variables.
 const firebaseConfig = {
   apiKey: (import.meta as any).env.VITE_FIREBASE_API_KEY,
   authDomain: (import.meta as any).env.VITE_FIREBASE_AUTH_DOMAIN,
@@ -24,7 +26,21 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+// Initialize services
 const auth = getAuth(app);
 const db = getFirestore(app);
+const storage = getStorage(app);
+const functions = getFunctions(app);
 
-export { app, auth, db };
+// Enable offline persistence for Firestore
+enableIndexedDbPersistence(db).catch((err) => {
+  if (err.code === 'failed-precondition') {
+    console.warn('Multiple tabs open, persistence can only be enabled in one tab at a time.');
+  } else if (err.code === 'unimplemented') {
+    console.warn('The current browser does not support offline persistence.');
+  }
+});
+
+
+export { app, auth, db, storage, functions };
